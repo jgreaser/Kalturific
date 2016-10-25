@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>Kalterrific</title>
+</head>
+<script src="vendor/KalturaClientBase.js"></script>
+
+<script src="vendor/KalturaClient.js"></script>
+<script src="lib/angular.js"></script>
+<script src="lib/ui-bootstrap.js"></script>
+<script src="lib/angular-animate.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+
+<!--TD's in your code, using new style sheets-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+<link rel="stylesheet" href="lib/stylezz.css">
+
+
+<!---->
+<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
+<script src="app.js"></script>
+<!---->
+<script src="video.controller.js"></script>
+<script src="subscribe.controller.js"></script>
+<script src="subscribe.service.js"></script>
+
+<!---->
+<script src="video.service.js"></script>
+<!---->
+
+<style>
+
+    pre {background-color: #CCC;}
+    .logo {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    
+    button {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-family: 'Dosis';
+    }
+    
+    body {
+        background-color: #F5F5F5;
+    }
+    
+    h1 {font-size: 64px;
+        margin-top: 5px;
+        margin-left: 5px;
+        font-family: 'Dosis';
+    }
+    h2 {
+        margin-top: 5px;
+        margin-left: 5px;
+        font-family: 'Dosis';
+    }
+    
+    h4 {
+        font-family: 'Dosis';
+    }
+    
+    .w3-lobster {
+        font-family: 'Dosis', serif;
+    }
+    
+    .w3-dosis {
+        font-family: 'Dosis', serif;
+    }
+    
+    .w3-invisible {
+        display: none;
+    }
+</style>
+
+<body ng-app="app" ng-controller="videoController as vidCtrl">
+    <div class="container">
+        <div class="row"><div class="col-md-12"><h1>Kalterrific</h1>
+
+        <div class="row">
+      
+
+      <div class="col-md-8"><h2>Video</h2>
+        <script type="text/javascript" src="https://cdn.flvs.net/cdn/kaltura/kalturaEmbed.js?entryID=1_nxe6z1hf;width=640;height=360;uiconfID=35766781"></script></div>
+     <div class="col-md-4"><h2>Interactive</h2>
+        <div id="interactive">
+            <h3 >{{vidCtrl.prompt}}</h3>
+            <ul>
+                <li ng-repeat="option in vidCtrl.options track by $index" ng-click="vidCtrl.checkResponse(option, vidCtrl.answer)">{{option}}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row"><hr /></div>
+    <div class="row">
+        <div class="col-md-12">
+            <pre>
+            var data =  {
+            uiconfID: '35766781',
+            entryID: '1_nxe6z1hf',
+            options: {},
+            content:[{seconds: 5,
+                    prompt: 'Did he come from the left, or the right?',
+                    options: ['left', 'right', 'top', 'bottom'],
+                    answer: 'left'},
+                    {seconds: 10,
+                    prompt: 'Seriously  though, left or right?',
+                    options: ['left', 'right'],
+                    answer: 'left'},
+                    {seconds: 20,
+                    prompt: 'Did you see the gorilla?',
+                    options: ['yes', 'no'],
+                    answer: 'yes'}]};
+            </pre>
+        </div>
+    </div>
+        
+    </div>
+</body>
+
+
+</html>
